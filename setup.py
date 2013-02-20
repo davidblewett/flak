@@ -14,11 +14,14 @@ requires = [
     'pyramid_debugtoolbar',
     'zope.sqlalchemy',
     'waitress',
-    ]
+    'psycopg2>=2.4',
+    'mutagen',
+    'walkdir',
+]
 
 setup(name='flak',
       version='0.0',
-      description='flak',
+      description='Bullet-proof music metadata management',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
@@ -40,5 +43,6 @@ setup(name='flak',
       main = flak:main
       [console_scripts]
       initialize_flak_db = flak.scripts.initializedb:main
+      update_tags = flak.scripts.updatetags:main
       """,
-      )
+)
